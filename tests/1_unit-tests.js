@@ -72,14 +72,37 @@ suite('Unit Tests', function(){
           });
     });
     suite('Function convertHandler.getReturnUnit(input)', function(){
-        test('convert gal to L,L to gal,mi to km,km to mi,lbs to kg,kg to lbs',(done) => {
-          let input=['gal','L','mi','km','lbs','kg'];
-          let output=['L','gal','km','mi','kg','lbs'];
-        input.map((ele,index) => {
-          assert.equal(convertHandler.getReturnUnit(ele),output[index]);
-        });
+        test('convert gal to L',(done) => {
+          let input='gal';
+          assert.equal(convertHandler.getReturnUnit(input),'L');
           done();
           }); 
+        test('convert L to gal',(done) => {
+          let input='L';
+          assert.equal(convertHandler.getReturnUnit(input),'gal');
+          done();
+          }); 
+        test('convert mi to km',(done) => {
+          let input='mi';
+          assert.equal(convertHandler.getReturnUnit(input),'km');
+          done();
+          }); 
+        test('convert km to mi',(done) => {
+          let input='km';
+          assert.equal(convertHandler.getReturnUnit(input),'mi');
+          done();
+          }); 
+        test('convert lbs to kg',(done) => {
+          let input='lbs';
+          assert.equal(convertHandler.getReturnUnit(input),'kg');
+          done();
+          }); 
+        test('convert kg to lbs',(done) => {
+          let input='kg';
+          assert.equal(convertHandler.getReturnUnit(input),'lbs');
+          done();
+          }); 
+         
     });
     
 });
